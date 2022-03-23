@@ -7,7 +7,7 @@ import './Card.sass';
 
 interface CardProp {
   card: ICard;
-  openModal: any;
+  openModal: (modalData: ICard) => void;
   imageExtValidator: (url: string) => boolean;
 }
 
