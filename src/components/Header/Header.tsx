@@ -1,14 +1,10 @@
 import { Dispatch, SetStateAction } from "react";
 import './Header.sass';
+import { IMenuItem } from '../../interfaces/header';
 
 interface HeaderProp {
   menuItems: IMenuItem[];
   setCategory: Dispatch<SetStateAction<number>>;
-}
-
-interface IMenuItem {
-  name: string;
-  category: number;
 }
 
 const Header: React.FC<HeaderProp> = (props: HeaderProp) => {
@@ -26,7 +22,6 @@ const Header: React.FC<HeaderProp> = (props: HeaderProp) => {
         </div>)
       }
     </div>
-    
   </div>
 }
 

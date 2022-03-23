@@ -27,10 +27,10 @@ const Modal = (props: ModalProps) => (
       <p>{props.modalData?.description}</p>
     </div>
     <button className="rodal__btn--confirm" onClick={props.hideModal}>
-      ok
+      OK
     </button>
     <button className="rodal__btn--cancel" onClick={props.hideModal}>
-      close
+      Close
     </button>
   </Rodal>
 );
