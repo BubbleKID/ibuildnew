@@ -1,10 +1,9 @@
-import { Dispatch, SetStateAction } from "react";
 import './Header.sass';
 import { IMenuItem } from '../../interfaces/header';
 
 interface HeaderProp {
   menuItems: IMenuItem[];
-  setCategory: Dispatch<SetStateAction<number>>;
+  handleSetCategory: (category: number) => void;
 }
 
 const Header: React.FC<HeaderProp> = (props: HeaderProp) => {
@@ -14,7 +13,7 @@ const Header: React.FC<HeaderProp> = (props: HeaderProp) => {
     <div className="header__container">
       {
         props.menuItems.map((item, index) => <div className="header__container" key={index + item.name}>
-          <span onClick={() => props.setCategory(item.category)}>{item.name}</span>          
+          <span onClick={() => props.handleSetCategory(item.category)}>{item.name}</span>          
           {
             (props.menuItems.length === index + 1) ? <div className="header__divider--last"></div> 
             : <div className="header__divider"></div>

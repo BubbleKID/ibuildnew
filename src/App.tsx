@@ -32,10 +32,14 @@ function App() {
     return /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/i.test(url);
   }
 
+  const handleSetCategory = (category: number) => {
+    setCategory(category);
+  }
+
   return (
     <div className="app">
       <Modal hideModal={hideModal} isOpenModal={isOpenModal} imageExtValidator={imageExtValidator} modalData={modalData!}/>
-      <Header menuItems={menuItems} setCategory={setCategory}/>
+      <Header menuItems={menuItems} handleSetCategory={handleSetCategory}/>
       <div className="cards-container">
         {cardData.map((item: ICard, index: number) => <Card imageExtValidator={imageExtValidator} openModal={openModal} key={index + item.postAt} card={item} />)}
       </div>
