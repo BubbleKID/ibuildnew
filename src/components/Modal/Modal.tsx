@@ -11,7 +11,7 @@ interface ModalProps {
   imageExtValidator: (url: string) => boolean;
   modalData: ICard;
 }
-const Modal = (props: ModalProps) => (
+const Modal: React.FC<ModalProps> = (props: ModalProps) => (
   <Rodal 
     className="rodal"
     visible={props.isOpenModal}
